@@ -11,6 +11,7 @@ import java.lang.reflect.Type
  * @author Ocelot
  * @see Dialog
  * @see DialogJsonLoader
+ * @since 1.0
  */
 class DialogInfo(private val texts: List<Text>) {
 

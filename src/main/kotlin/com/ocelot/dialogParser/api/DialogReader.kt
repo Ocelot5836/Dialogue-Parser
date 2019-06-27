@@ -5,6 +5,7 @@ package com.ocelot.dialogParser.api
  *
  * @author Ocelot
  * @see Dialog
+ * @since 1.0
  */
 interface DialogReader {
 

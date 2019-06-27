@@ -11,6 +11,7 @@ import java.io.InputStreamReader
  *
  * @author Ocelot
  * @see DialogInfo
+ * @since 1.0
  */
 object DialogJsonLoader {
 

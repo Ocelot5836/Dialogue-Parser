@@ -10,6 +10,7 @@ import kotlinx.coroutines.launch
  * @author Ocelot
  * @see DialogInfo
  * @see DialogReader
+ * @since 1.0
  */
 class Dialog(private val info: DialogInfo, private val reader: DialogReader) {
 
