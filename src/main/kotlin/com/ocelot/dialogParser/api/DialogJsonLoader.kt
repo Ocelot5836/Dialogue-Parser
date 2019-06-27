@@ -8,10 +8,10 @@ import java.io.InputStreamReader
 
 object DialogJsonLoader {
 
-    val gson: Gson = GsonBuilder().registerTypeAdapter(Dialog::class.java, Dialog.Deserializer())
-        .registerTypeAdapter(Dialog.Text::class.java, Dialog.Text.Deserializer()).create()
+    val gson: Gson = GsonBuilder().registerTypeAdapter(DialogInfo::class.java, DialogInfo.Deserializer())
+        .registerTypeAdapter(DialogInfo.Text::class.java, DialogInfo.Text.Deserializer()).create()
 
-    fun load(stream: InputStream): Dialog {
+    fun load(stream: InputStream): DialogInfo {
         BufferedReader(InputStreamReader(stream)).use { reader ->
             val builder = StringBuilder()
             reader.forEachLine { line ->
@@ -21,7 +21,7 @@ object DialogJsonLoader {
         }
     }
 
-    fun load(json: String): Dialog {
-        return gson.fromJson(json, Dialog::class.java)
+    fun load(json: String): DialogInfo {
+        return gson.fromJson(json, DialogInfo::class.java)
     }
 }
