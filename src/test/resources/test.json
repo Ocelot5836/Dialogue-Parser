@@ -1,0 +1,78 @@
+[
+	{
+		"label": "start",
+		"message": "Noble Heirarch. What would you have your Arbiter do?",
+		"response": [
+			{
+				"message": "What can you tell me about yourself?",
+				"target": "arbiterlore1"
+			},
+			{
+				"message": "That is all. The Great Journey awaits.",
+				"target": ""
+			}
+		]
+	},
+	{
+		"label": "arbiterlore1",
+		"message": "Your predecessor, the Noble Prophet of Truth, named me Arbiter to defeat the heretic faction and as punishment for my mistake",
+		"response": [
+			{
+				"message": "And what of these heretics?",
+				"target": "hereticslore"
+			},
+			{
+				"message": "What was your mistake?",
+				"target": "arbiter2"
+			},
+			{
+				"message": "I have another task for you",
+				"target": "start"
+			}
+		]
+	},
+	{
+		"label": "hereticslore",
+		"message": "The heretic leader known as Sesa 'Refumee abducted the Oracle and was spreading lies amongst the Convenant. I killed the heretic and Tartarus delivered the Holy Oracle to the Heirarchs",
+		"response": [
+			{
+				"message": "Tell me about this Oracle",
+				"target": "oracle"
+			}
+		]
+	},
+	{
+		"label": "oracle",
+		"message": "The Holy Oracle guides us to salvation! With their help we shall commence The Great Journey!"
+	},
+	{
+		"label": "arbiter2",
+		"message": "After the glassing of the human world, I followed their fleeing ship with all the ships under my command. They desecrated the Holy Ring with their filfthy footprints but, with the release of the parasite, I was unable to safeguard Halo from the Demon",
+		"response": [
+		{
+				"message": "Tell me about the Holy Ring",
+				"target": "halo"
+			},
+			{
+				"message": "The parasite?",
+				"target": "flood"
+			},
+			{
+				"message": "Who is this 'Demon'?",
+				"target": "chief"
+			}
+		]
+	},
+	{
+		"label": "halo",
+		"message": "Halo. One of the seven constructed by the Forerunners. Millenia ago they too embarked on the Great Journey and ascended through the activation of the rings. We wish to follow in their footsteps."
+	},
+	{
+		"label": "flood",
+		"message": "The Flood attacked us as we hunted down the remaining humans. We diverted our attention to eradicating the parasite, but it spread far beyond our control."
+	},
+	{
+		"label": "chief",
+		"message": "The human's Demon, they call it 'Master Chief', destroyed Halo as the parasite attacked."
+	}
+]
