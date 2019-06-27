@@ -6,6 +6,10 @@ import kotlinx.coroutines.launch
 
 /**
  * A dialog between an 'NPC' and the user.
+ *
+ * @author Ocelot
+ * @see DialogInfo
+ * @see DialogReader
  */
 class Dialog(private val info: DialogInfo, private val reader: DialogReader) {
 

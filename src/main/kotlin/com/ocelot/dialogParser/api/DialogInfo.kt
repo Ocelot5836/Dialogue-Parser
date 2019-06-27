@@ -7,7 +7,9 @@ import java.lang.reflect.Type
 
 /**
  * All information related to a Dialog. Can be created from JSON in the DialogJsonLoader.
- * @see DialogInfo
+ *
+ * @author Ocelot
+ * @see Dialog
  * @see DialogJsonLoader
  */
 class DialogInfo(private val texts: List<Text>) {
