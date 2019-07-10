@@ -5,6 +5,7 @@ import com.google.gson.JsonDeserializer
 import com.google.gson.JsonElement
 import java.lang.reflect.Type
 
+//TODO remove the unnecessary deserializers
 /**
  * All information related to a Dialog. Can be created from JSON in the DialogJsonLoader.
  *
