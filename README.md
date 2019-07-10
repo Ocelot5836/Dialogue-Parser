@@ -1,3 +1,3 @@
-# Dialog Parser
+# Dialogue Parser
 
-A Gson based story dialog parser library for Kotlin.
+A Gson based story dialogue parser library for Kotlin.

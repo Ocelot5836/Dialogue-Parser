@@ -5,16 +5,16 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 /**
- * A dialog between an 'NPC' and the user.
+ * A dialogue between an 'NPC' and the user.
  *
  * @author Ocelot
- * @see DialogInfo
- * @see DialogReader
+ * @see DialogueInfo
+ * @see DialogueReader
  * @since 1.0
  */
-class Dialog(private val info: DialogInfo, private val reader: DialogReader) {
+class Dialogue(private val info: DialogueInfo, private val reader: DialogueReader) {
 
-    var currentText: DialogInfo.Text = info.getStartingText()
+    var currentText: DialogueInfo.Text = info.getStartingText()
     var done: Boolean = false
     var awaitingInput: Boolean = false
 
@@ -24,7 +24,7 @@ class Dialog(private val info: DialogInfo, private val reader: DialogReader) {
         }
     }
 
-    private suspend fun printText(text: DialogInfo.Text) {
+    private suspend fun printText(text: DialogueInfo.Text) {
         delay(text.delay.toLong())
         reader.printMessage(info, text)
         reader.printResponse(info, text.responses)
@@ -33,8 +33,7 @@ class Dialog(private val info: DialogInfo, private val reader: DialogReader) {
     }
 
     /**
-     * Responds to the current input.
-     * @param index The response index to select from the current text
+     * Selects the option by [index] and sends the option's info or ends the conversation if there are no responses
      */
     fun respond(index: Int) {
         if (!awaitingInput && currentText.responses.isNotEmpty())
@@ -46,10 +45,10 @@ class Dialog(private val info: DialogInfo, private val reader: DialogReader) {
                 done = true
             } else {
                 if (index >= 0 && index < currentText.responses.size) {
-                    val response: DialogInfo.Response = currentText.responses[index]
+                    val response: DialogueInfo.Response = currentText.responses[index]
                     val text = info.getTextByLabel(response.target)
-                    if (text == DialogInfo.EMPTY_TEXT) {
-                        currentText = DialogInfo.EMPTY_TEXT
+                    if (text == DialogueInfo.EMPTY_TEXT) {
+                        currentText = DialogueInfo.EMPTY_TEXT
                     } else {
                         printText(text)
                     }
