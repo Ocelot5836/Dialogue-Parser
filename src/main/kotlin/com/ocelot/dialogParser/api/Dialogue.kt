@@ -52,6 +52,8 @@ class Dialogue(private val info: DialogueInfo, private val reader: DialogueReade
                     } else {
                         printText(text)
                     }
+                } else {
+                    awaitingInput = true
                 }
             }
         }
