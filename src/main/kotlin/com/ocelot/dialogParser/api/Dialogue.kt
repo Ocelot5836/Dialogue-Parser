@@ -3,6 +3,7 @@ package com.ocelot.dialogParser.api
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 
 /**
  * A dialogue between an 'NPC' and the user.
@@ -40,7 +41,7 @@ class Dialogue(private val info: DialogueInfo, private val reader: DialogueReade
             return
 
         awaitingInput = false
-        GlobalScope.launch {
+        runBlocking {
             if (currentText.responses.isEmpty()) {
                 done = true
             } else {
