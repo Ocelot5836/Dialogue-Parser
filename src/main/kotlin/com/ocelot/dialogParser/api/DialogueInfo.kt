@@ -1,5 +1,8 @@
 package com.ocelot.dialogParser.api
 
+import com.fasterxml.jackson.annotation.JsonAlias
+import com.fasterxml.jackson.annotation.JsonEnumDefaultValue
+
 /**
  * All information related to a [Dialogue]. Can be created from JSON in [DialogueJsonLoader].
  *
@@ -38,7 +41,13 @@ class DialogueInfo(private val texts: List<Text>) {
     /**
      * A single line of text that can be sent by a [Dialogue].
      */
-    class Text(val label: String, val message: String, val delay: Number, val responses: List<Response>)
+    class Text(
+        val label: String = "",
+        val message: String = "",
+        val delay: Number = 0,
+        @JsonAlias("response")
+        val responses: List<Response> = ArrayList()
+    )
 
     /**
      * A single response that will send another text if the [target] is valid. It displays [message] when selecting.
